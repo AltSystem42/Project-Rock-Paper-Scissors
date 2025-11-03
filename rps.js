@@ -14,7 +14,12 @@
 
 //prompt user what their choice will be
 function getHumanChoice (){
-    prompt("Rock, Paper, or Scissors?");
+    let choice = prompt("rock, paper, or scissors?");
+    if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        return choice;
+    } else {
+        alert("Choose only 'rock', 'paper', or 'scissors'");
+    };
 }
 
 // Will return the computer's choice of rock, paper, or scissors
@@ -30,4 +35,5 @@ function getComputerChoice() {
     
 }
 
-getHumanChoice();
+let human = getHumanChoice();
+console.log(human);
