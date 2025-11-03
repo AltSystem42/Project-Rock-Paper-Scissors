@@ -6,16 +6,19 @@
 
 
 
-//move input into a variable
-//get computer's choice
-//compare who won the rock paper, or scissors battle
+
+
 //prompt the user either with win or lose of the battle
 
+// Declare players score variables
+let humanScore = 0;
+let computerScore = 0;
 
 //prompt user what their choice will be
 function getHumanChoice (){
-    let choice = prompt("rock, paper, or scissors?");
+    let choice = prompt("rock, paper, or scissors?").toLowerCase();
     if (choice === "rock" || choice === "paper" || choice === "scissors") {
+        console.log(choice);
         return choice;
     } else {
         alert("Choose only 'rock', 'paper', or 'scissors'");
@@ -34,6 +37,12 @@ function getComputerChoice() {
     };
     
 }
+//play a round of rock paper scissors
+function playRound(humanChoice, computerChoice) {
+    if (humanChoice === computerChoice) {
+    }
+}
+const humanSelection = getHumanChoice();
+const computerSelection = getComputerChoice();
 
-let human = getHumanChoice();
-console.log(human);
+playRound(humanSelection, computerSelection);
