@@ -16,18 +16,15 @@ function playGame (){
         computerScore++;
     } else if (winner == "human"){
         humanScore++;
-    } else {
-        humanScore++;
-        computerScore++;
-    }
+    } 
     }
     // End of game did you win?
     if (humanScore > computerScore){
-        alert(`You WON! NPC: ${computerScore} you: ${humanScore}`);
+        alert(`You WON! NPC: ${computerScore} You: ${humanScore}`);
     } else if (humanScore < computerScore) {
-        alert(`You LOST! NPC: ${computerScore} you: ${humanScore}`)
+        alert(`You LOST! NPC: ${computerScore} You: ${humanScore}`)
     } else {
-        alert(`tie NPC:${computerScore} you:${humanScore}`)
+        alert(`It's a TIE NPC:${computerScore} You:${humanScore}`)
     }
 }
 
