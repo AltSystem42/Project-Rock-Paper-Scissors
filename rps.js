@@ -23,11 +23,11 @@ function playGame (){
     }
     // End of game did you win?
     if (humanScore > computerScore){
-        alert(`You WON!`);
+        alert(`You WON! NPC: ${computerScore} you: ${humanScore}`);
     } else if (humanScore < computerScore) {
-        alert(`You LOST!`)
+        alert(`You LOST! NPC: ${computerScore} you: ${humanScore}`)
     } else {
-        alert("tie")
+        alert(`tie NPC:${computerScore} you:${humanScore}`)
     }
 }
 
