@@ -1,8 +1,8 @@
 const playerSelections = document.querySelectorAll(".choice");
 const result = document.getElementById("result")
-const roundCount = document.createElement("div")
-const winCount = document.createElement("div")
-const lostCount = document.createElement("div")
+const roundCount = document.querySelector(".round")
+const winCount = document.querySelector(".wins")
+const lostCount = document.querySelector(".lost")
 
 let humanScore = 0;
 let computerScore = 0;
@@ -13,14 +13,32 @@ playerSelections.forEach(choice => {
     const winner = playRound(choice.id);
     if (winner === "human"){
         humanScore++;
+        winCount.textContent = humanScore;
     } else if (winner === "pc") {
         computerScore++;
+        lostCount.textContent = computerScore;
     }
-    console.log(round)
-    roundCount.textContent = round;
     round++; 
+    roundCount.textContent = round;
+    console.log(humanScore)
+    if (humanScore === 5 && computerScore < 5) {
+        result.textContent = "YOU WON THE GAME!"
+        resetGame();
+    } else if (computerScore === 5 && humanScore < 5) {
+        result.textContent = "YOU LOST THE GAME!"
+        resetGame();
+    } 
   });
 });
+
+function resetGame() {
+    humanScore = 0
+    computerScore = 0
+    round = 0
+    roundCount.textContent = ""
+    winCount.textContent = ""
+    lostCount.textContent = ""
+}
 
 function playGame (){
     // Declare players score variables
